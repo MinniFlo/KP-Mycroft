@@ -1,0 +1,34 @@
+= Zeitplan
+
+Der Start der Bearbeitungszeit für diesen Zeitplan ist für den 6. Mai 2019 
+vorgesehen und soll bis ca. Anfang August gehen. Somit ergeben sich ungefähr 
+12 Wochen Arbeitszeit, die wie folgt aufgeteilt sind.
+
+[option="header", cols="1, 3"]
+|===
+|2 Wochen       a|
+- Installation auf PC und Pi
+- Struktur und Funktion von Skills ansehen
+- einfache Skills selbst schreiben
+
+|2 Wochen       a|
+- Doku schreiben
+- Healthcare-Skills ausdenken
+- Roboter anschauen (Androidversion, ...)
+
+|1 Woche        a|
+- Companionapp anschauen (Adroidapp von Mycroft)
+- Funktionen testen
+- Qualität vergleichen mit der direkten Verwendungsvariante          
+
+|4 Wochen       a|
+- Implementierungszeit für Skills
+
+|1-2 Woche(n)   a|
+- auf Roboter oder Raspi testen
+
+|1-2 Woche(n)   a|
+- Doku vervollständingen
+- Puffer
+
+|===
