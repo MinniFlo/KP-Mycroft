@@ -1,1 +1,29 @@
-Hier kommt die Doku rein
+= Dokumentation
+Diese Dokumentation beschreibt die Nutzung von der Mycroft.ai im Rahmen des 
+Komplexpraktikums Mensch Computerinteraktion.
+Mycroft ist ein Opensource Ansatz für einen Sprachassistent und ist auf PC, Mac, 
+, Linux sowie Android und Raspbarry Pi nutzbar. Diese Dokumentation betrachtet 
+nur die Nutzung auf Linux und Raspbarry Pi. 
+
+== Setup
+
+
+=== Linux
+...
+
+=== Raspbarry Pi
+Um einen Pi als Sprachassistenten einzurichten, benötigt man einen Raspbarry 
+Pi 3 (oder besser), ein USB bzw. ein 3.5 mm Klinke Lautsprecher oder einen 
+Bildschirm mit Lautsprechern und ein USB Microphon. Außerdem werden eine 
+Tastatur und ein Bildschirm benötigt um das Setup auszuführen. Die Paspbarry Pi 
+Version von Mycroft (Picroft) kommt als gewöhnliches Image, was auf eine SD 
+Karte geflasht wird. +
+Wenn der Pi das erste Mal startet, folgt ein Dialog der das Einrichten einer 
+Internetverbindung ermöglicht. Danach kann ein Setup ausgeführt werden, was das 
+Einrichten von Lautsprecher und Microphon vereinfacht. Dies funktioniert für den 
+Lautsprecher gut, da bei diesem nur der Anschlusstyp entscheident ist. Für das 
+Micro funktioniert das Setup nur gut, wenn es eines der von Mycroft empfolenden 
+Microphone ist. Wenn man ein anderes angeschlossen hat muss man über "alsamixer", 
+was schon vorinstalliert ist oder "pulseaudio" das richtige Gerät auswählen. +
+Nach dem Setup wird der Mycroftklient zum erstem Mal gestartet und das schon 
+genannte Mycroftsetup folgt.
