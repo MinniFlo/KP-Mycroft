@@ -1,29 +1,95 @@
 = Dokumentation
-Diese Dokumentation beschreibt die Nutzung von der Mycroft.ai im Rahmen des 
-Komplexpraktikums Mensch Computerinteraktion.
-Mycroft ist ein Opensource Ansatz für einen Sprachassistent und ist auf PC, Mac, 
-, Linux sowie Android und Raspbarry Pi nutzbar. Diese Dokumentation betrachtet 
-nur die Nutzung auf Linux und Raspbarry Pi. 
+
+Diese Dokumentation beschreibt die Nutzung von Mycroft.ai im 
+Rahmen des Komplexpraktikums Mensch-Computer-Interaktion.
+Mycroft ist ein Open Source Sprachassistent und ist auf Linux 
+sowie Android und insbesondere dem Raspberry Pi nutzbar. Diese Dokumentation betrachtet 
+nur die Nutzung auf Linux und dem Raspberry Pi. +
+Die offizielle Dokumentation für Mycroft findet sich unter https://mycroft.ai/documentation/#mycroft-skills-kit
 
 == Setup
 
 
 === Linux
-...
+Unter Linux lässt sich Mycroft relativ leicht installieren. Dafür gibt es zwei
+Möglichkeiten. Zum einen kann Mycroft in vielen Distributionen über den 
+jeweiligen Paketmanager heruntergeladen und installiert werden und zum 
+anderen ist auch eine manuelle Installation über das Git-Repository 
+(https://github.com/MycroftAI/mycroft-core/blob/dev/README.md) möglich.
 
-=== Raspbarry Pi
-Um einen Pi als Sprachassistenten einzurichten, benötigt man einen Raspbarry 
-Pi 3 (oder besser), ein USB bzw. ein 3.5 mm Klinke Lautsprecher oder einen 
-Bildschirm mit Lautsprechern und ein USB Microphon. Außerdem werden eine 
-Tastatur und ein Bildschirm benötigt um das Setup auszuführen. Die Paspbarry Pi 
-Version von Mycroft (Picroft) kommt als gewöhnliches Image, was auf eine SD 
-Karte geflasht wird. +
+=== Raspberry Pi
+Um einen Pi als Sprachassistenten einzurichten, benötigt man einen Raspberry 
+Pi 3 (oder besser), einen USB oder 3.5 mm Klinke Lautsprecher oder einen 
+Bildschirm mit Lautsprechern und ein USB-Mikrofon. Außerdem werden eine 
+Tastatur und ein Bildschirm benötigt um das Setup auszuführen. Die Paspberry Pi 
+Version von Mycroft (Picroft https://github.com/MycroftAI/enclosure-picroft) 
+kommt als gewöhnliches Image, was auf eine SD Karte geflasht werden kann. +
 Wenn der Pi das erste Mal startet, folgt ein Dialog der das Einrichten einer 
 Internetverbindung ermöglicht. Danach kann ein Setup ausgeführt werden, was das 
-Einrichten von Lautsprecher und Microphon vereinfacht. Dies funktioniert für den 
-Lautsprecher gut, da bei diesem nur der Anschlusstyp entscheident ist. Für das 
-Micro funktioniert das Setup nur gut, wenn es eines der von Mycroft empfolenden 
-Microphone ist. Wenn man ein anderes angeschlossen hat muss man über "alsamixer", 
+Einrichten von Lautsprecher und Mikrofon vereinfacht. Dies funktioniert für den 
+Lautsprecher gut, da bei diesem nur der Anschlusstyp entscheidend ist. Für das 
+Mikro funktioniert das Setup nur gut, wenn es eines der von Mycroft empfolenden 
+Mikrofone ist. Wenn man ein anderes angeschlossen hat muss man über "alsamixer", 
 was schon vorinstalliert ist oder "pulseaudio" das richtige Gerät auswählen. +
-Nach dem Setup wird der Mycroftklient zum erstem Mal gestartet und das schon 
+Nach dem Setup wird der Mycroft-Client zum erstem Mal gestartet und das schon 
 genannte Mycroftsetup folgt.
+
+=== Pairing
+Nach der Installation von Mycroft sollte dieses mit einem Mycroft-Home Account
+verknüpft werden. Dadurch kann Mycroft API-Keys besser verwalten und zusätzliche
+Services anbieten. Theoretisch ist ein Betrieb von Mycroft auch ohne einen Account
+und mit eigenen API-Keys möglich. +
+Das Pairing erfolgt über einen sechsstelligen Code, der nach dem erstmaligen Starten 
+von Mycroft ausgegeben wird. Dieser muss online dem Konto hinzugefügt werden. +
+Danach ist die vollständige Nutzung von Mycroft möglich.
+
+== Installation von Skills
+Skills können nach der Verknüpfung mit einem Mycroft Account einfach über
+den Mycroft Marketplace installiert werden. +
+Neben dieser Art der Installation gibt es auch noch den Mycroft Skills Manager,
+welcher das Herunterladen und Installieren von Skills über die Kommandozeile
+ermöglicht.
+
+=== Weitere Systeme
+Für Windows und MacOS gibt es momentan noch keine Mycroft Versionen. Für
+Android gibt es zwar eine Companion-App, diese funktioniert aber erst ab
+Android SDK24 und war deshalb für den angedachten Einsatz unnutzbar. Die
+Installation würde hier über Android Studio erfolgen, eine fertige, direkt
+installierbare, APK gibt es nicht.
+
+== Entwicklung von Skills
+Skills für Mycroft basieren auf Python, weshalb hier ein gewisses Grundverständnis
+unabdingbar ist. +
+Für das Verständnis von Skills in Mycroft sind 3 Begriffe besonders wichtig: +
+
+* dialog: Ein Dialog ist eine Phrase, die von Mycroft ausgesprochen wird, beispielsweise
+als Antwort auf eine Frage.
+* utterance: Ein Utterance ist ein Satz der von einem Nutzer gesprochen wird nach dem 
+dieser das Wake-Word gesagt hat.
+* intent: Ein Intent ist ein identifizierter Aufruf eines Skills durch einen Nutzer. Utterances
+werden mit existierenden Intents verglichen und dadurch werden die passenden Skills aktiviert.
+
+Für Skills gibt es bereits ein vorgefertigtes Repository, in welchem sich zu einem viele
+Skills aus der Community und zum anderen auch ein Template für neue Skills finden lassen
+(https://github.com/MycroftAI/mycroft-skills). +
+Die Struktur der Skill-Repositories ist relativ strikt und setzt sich wie folgt zusammen:
+
+* dialog-Ordner: Hier landen alle Dialog-Dateien in den verschiedenen Sprachen, die der Skill
+ausgeben können soll. Dialog-Dateien enden mit .dialog
+* vocab-Ordner: Hier landen alle Intent-Dateien in den verschiedenen Sprachen, auf die der Skill
+reagieren soll. Intent-Dateien enden mit .intent. Intents können auch reguläre Ausdrücke enthalten.
+Außerdem finden sich hier auch .voc Dateien. Diese definieren bestimmte Vokabeln, die in einem
+Intent vorkommen können, also beispielsweise Synonyme die vom Nutzer äquivalent verwendet werden.
+* regex-Ordner: Dieser Ordner ist optional und enthält reguläre Ausdrücke, welche in Intents 
+vorkommen können. Regex-Dateien enden mit .rx
+* init.py: In dieser Python-Datei werden die Aufrufe der Intents behandelt, verarbeitet und 
+die Ergebnisse an den Nutzer zurückgegeben.
+
+Innerhalb der Python-Datei werden die Intents mit Dekoratoren auf Funktionen abgebildet.
+Vor einer Funktion die einen Intent verarbeitet muss deshalb immer der dazugehörige Dekorator stehen.
+Beispiel:
+----
+@intent_file_handler("hello.world.intent")
+def handle_hello_world(self):
+	return self.speak_dialog("hello.world") # hello.world ist eine .dialog Datei
+----
