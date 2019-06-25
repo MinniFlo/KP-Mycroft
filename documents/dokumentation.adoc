@@ -43,7 +43,7 @@ Das Pairing erfolgt über einen sechsstelligen Code, der nach dem erstmaligen St
 von Mycroft ausgegeben wird. Dieser muss online dem Konto hinzugefügt werden. +
 Danach ist die vollständige Nutzung von Mycroft möglich.
 
-== Installation von Skills
+=== Installation von Skills
 Skills können nach der Verknüpfung mit einem Mycroft Account einfach über
 den Mycroft Marketplace installiert werden. +
 Neben dieser Art der Installation gibt es auch noch den Mycroft Skills Manager,
@@ -93,3 +93,7 @@ Beispiel:
 def handle_hello_world(self):
 	return self.speak_dialog("hello.world") # hello.world ist eine .dialog Datei
 ----
+
+Eine ausführlichere Erklärung über die notwendigen Python-Packages und das Vorgehen
+bei der Entwicklung von Skills findet sich unter https://mycroft.ai/documentation/skills/introduction-developing-skills/.
+Außerdem kann man sich sehr gut an den bereits existierenden Skills orientieren.
