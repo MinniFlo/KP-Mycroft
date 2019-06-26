@@ -31,8 +31,8 @@ Lautsprecher gut, da bei diesem nur der Anschlusstyp entscheidend ist. Für das
 Mikro funktioniert das Setup nur gut, wenn es eines der von Mycroft empfolenden 
 Mikrofone ist. Wenn man ein anderes angeschlossen hat muss man über "alsamixer", 
 was schon vorinstalliert ist oder "pulseaudio" das richtige Gerät auswählen. +
-Nach dem Setup wird der Mycroft-Client zum erstem Mal gestartet und das schon 
-genannte Mycroftsetup folgt.
+Nach dem Setup wird der Mycroft-Client zum erstem Mal gestartet und das Pairing 
+erfolgt.
 
 === Pairing
 Nach der Installation von Mycroft sollte dieses mit einem Mycroft-Home Account
