@@ -1,0 +1,17 @@
+{
+    "patients": {
+        "Hans Uranus": {
+            "name": "H",
+            "lastname": "ans Uranus",
+            "heartrate": [
+                42,
+                33
+            ]
+        },
+        "Peter bum": {
+            "name": "P",
+            "lastname": "eter bum",
+            "heartrate": []
+        }
+    }
+}
