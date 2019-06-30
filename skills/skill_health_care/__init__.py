@@ -10,52 +10,66 @@ class HealthCareSkill(MycroftSkill):
     def __init__(self):
         super(HealthCareSkill, self).__init__(name="HealthCareSkill")
         self.path = "skills/skill_health_care/data.txt"
-        
+        self.first_name = ""
+        self.last_name = ""
+
     @intent_file_handler("add.patient.intent")
     def add_patient_intent(self, message):
         data = message.data
-        if "name" in data and "lastname" in data:
-            if self._add_patient(data["name"], data["lastname"], []):
-                return self.speak_dialog("patient.added", data)
+        if "name" in data:
+            if self._convert_name(data["name"]):
+                if self._add_patient(self.first_name, self.last_name, []):
+                    return self.speak_dialog("patient.added", data)
+                else:
+                    return self.speak_dialog("patient.allready.exists")
             else:
-                return self.speak_dialog("patient.allready.exists")
+                return self.speak_dialog("invalid.name")
         else:
             return self.speak_dialog("debug")
     
     @intent_file_handler("remove.patient.intent")
     def remove_patient_intent(self, message):
         data = message.data
-        if "name" in data and "lastname" in data:
-            if self._remove_patient(data["name"], data["lastname"]):
-                return self.speak_dialog("patient.removed", data)
+        if "name" in data:
+            if self._convert_name(data["name"]):
+                if self._remove_patient(self.first_name, self.last_name):
+                    return self.speak_dialog("patient.removed", data)
+                else:
+                    return self.speak_dialog("patient.not.found", data)
             else:
-                return self.speak_dialog("patient.not.found", data)
+                return self.speak_dialog("invalid.name")
         else:
             return self.speak_dialog("debug")
 
     @intent_file_handler("add.heartrate.intent")
     def add_heartrate_intent(self, message):
         data = message.data
-        if "name" in data and "lastname" in data and "heartrate" in data:
-            if self._add_heartrate(data["name"], data["lastname"], data["heartrate"]):
-                return self.speak_dialog("heartrate.added", data)
+        if "name" in data and "heartrate" in data:
+            if self._convert_name(data["name"]):
+                if self._add_heartrate(self.first_name, self.last_name, data["heartrate"]):
+                    return self.speak_dialog("heartrate.added", data)
+                else:
+                    return self.speak_dialog("patient.not.found", data)
             else:
-                return self.speak_dialog("patient.not.found", data)
+                return self.speak_dialog("invalid.name")
         else:
             return self.speak_dialog("debug")
     
     @intent_file_handler("average.heartrate.intent")
     def average_heartrate_intent(self, message):
         data = message.data
-        if "name" in data and "lastname" in data:
-            calc_heartrate = self._average_heartrate(data["name"], data["lastname"])
-            if calc_heartrate > 0:
-                data["average"] = str(calc_heartrate)
-                return self.speak_dialog("heartrate.average", data)
-            elif calc_heartrate == 0:
-                return self.speak_dialog("no.heartrates.available")
+        if "name" in data:
+            if self._convert_name(data["name"]):
+                calc_heartrate = self._average_heartrate(self.first_name, self.last_name)
+                if calc_heartrate > 0:
+                    data["average"] = str(calc_heartrate)
+                    return self.speak_dialog("heartrate.average", data)
+                elif calc_heartrate == 0:
+                    return self.speak_dialog("no.heartrates.available")
+                else:
+                    return self.speak_dialog("patient.not.found", data)
             else:
-                return self.speak_dialog("patient.not.found", data)
+                return self.speak_dialog("invalid.name")
         else:
             return self.speak_dialog("debug")
 
@@ -147,6 +161,15 @@ class HealthCareSkill(MycroftSkill):
             data["patients"][key_str] = patient
             json.dump(data, fp, indent=4)
             return True 
+
+    def _convert_name(self, name):
+        name.lower()
+        names = name.split(' ', 1)
+        if len(names) <= 1:
+            return False
+        self.first_name = names[0]
+        self.last_name = names[1]
+        return True
 
 def create_skill():
     return HealthCareSkill()
