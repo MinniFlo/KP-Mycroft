@@ -29,7 +29,7 @@ class HealthCareSkill(MycroftSkill):
             if self._remove_patient(data["name"], data["lastname"]):
                 return self.speak_dialog("patient.removed", data)
             else:
-                return self.speak_dialog("patient.not.found")
+                return self.speak_dialog("patient.not.found", data)
         else:
             return self.speak_dialog("debug")
 
@@ -40,7 +40,7 @@ class HealthCareSkill(MycroftSkill):
             if self._add_heartrate(data["name"], data["lastname"], data["heartrate"]):
                 return self.speak_dialog("heartrate.added", data)
             else:
-                return self.speak_dialog("patient.not.found")
+                return self.speak_dialog("patient.not.found", data)
         else:
             return self.speak_dialog("debug")
     
@@ -55,7 +55,7 @@ class HealthCareSkill(MycroftSkill):
             elif calc_heartrate == 0:
                 return self.speak_dialog("no.heartrates.available")
             else:
-                return self.speak_dialog("patient.not.found")
+                return self.speak_dialog("patient.not.found", data)
         else:
             return self.speak_dialog("debug")
 
