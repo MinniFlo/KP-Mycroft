@@ -1,1 +1,2 @@
 The average heartrate of {{name}} is {{average}}.
+The average heartrate of patient {{name}} is {{average}}.
