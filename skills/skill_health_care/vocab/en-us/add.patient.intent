@@ -1,1 +1,1 @@
-Register {name}.
+(Register|Add|Create) (the|the new|) (patient|) {name}.
