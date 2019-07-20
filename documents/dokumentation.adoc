@@ -21,18 +21,33 @@ anderen ist auch eine manuelle Installation über das Git-Repository
 Um einen Pi als Sprachassistenten einzurichten, benötigt man einen Raspberry 
 Pi 3 (oder besser), einen USB oder 3.5 mm Klinke Lautsprecher oder einen 
 Bildschirm mit Lautsprechern und ein USB-Mikrofon. Außerdem werden eine 
-Tastatur und ein Bildschirm benötigt um das Setup auszuführen. Die Paspberry Pi 
+Tastatur und ein Bildschirm benötigt, um das Setup auszuführen. Die Paspberry Pi 
 Version von Mycroft (Picroft https://github.com/MycroftAI/enclosure-picroft) 
 kommt als gewöhnliches Image, was auf eine SD Karte geflasht werden kann. +
 Wenn der Pi das erste Mal startet, folgt ein Dialog der das Einrichten einer 
 Internetverbindung ermöglicht. Danach kann ein Setup ausgeführt werden, was das 
 Einrichten von Lautsprecher und Mikrofon vereinfacht. Dies funktioniert für den 
 Lautsprecher gut, da bei diesem nur der Anschlusstyp entscheidend ist. Für das 
-Mikro funktioniert das Setup nur gut, wenn es eines der von Mycroft empfolenden 
+Mikrofon funktioniert das Setup nur gut, wenn es eines der von Mycroft empfohlenen 
 Mikrofone ist. Wenn man ein anderes angeschlossen hat muss man über "alsamixer", 
 was schon vorinstalliert ist oder "pulseaudio" das richtige Gerät auswählen. +
 Nach dem Setup wird der Mycroft-Client zum erstem Mal gestartet und das Pairing 
 erfolgt.
+
+Bei der Verwendung eines Raspberry Pis ist darauf zu achten, dass das Netzteil
+genug Ampere zur Verfügung stellt. Mycroft selbst empfiehlt 2,5A, erfolgreich
+getestet wurde es auch mit 2A. Steht zu wenig zur Verfügung wird die Erkennung
+der Sprachbefehle schlechter oder manche Geräte wie Mikrofon oder Lautsprecher
+werden nicht mehr erkannt oder funktionieren nicht richtig.
+
+Empfohlene Reihenfolge für das Setup:
+. Image auf SD-Karte flashen und Pi starten
+. Setup durchführen und mit Internet verbinden
+. Picroft aktualisieren (sudo apt-get update und sudo apt-get upgrade)
+. Mikrofon mit alsamixer einrichten oder pulseaudio installieren
+(sudo apt-get install pulseaudio)
+. Pi neu starten
+. Picroft mit Mycroft-Home verbinden
 
 === Pairing
 Nach der Installation von Mycroft sollte dieses mit einem Mycroft-Home Account
