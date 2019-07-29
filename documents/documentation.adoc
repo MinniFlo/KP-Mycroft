@@ -44,6 +44,16 @@ Recommended order of steps for setting up the Pi:
 . restart the pi
 . connect Picroft to your Mycroft Home account
 
+=== Android
+
+To use Mycroft on Android you need an already set up Mycroft device for example a Raspberry Pi.
+
+. install Android Studio
+. clone GitHub repository (https://github.com/MycroftAI/Mycroft-Android)
+. install the app on your Android device with Android Studio and start it
+. go to general and use the IP address of your Mycroft device ("Hey Mycroft, what is you IP address")
+. use Mycroft on your Android device
+
 === Pairing
 After installing Mycroft you need to connect it to your Mycroft Home account.
 In this way Mycroft can manage API-Keys better and can offer additional services
