@@ -66,7 +66,13 @@ account. After that the complete use of Mycroft is possible.
 === Installation von Skills
 After pairing your device, skills can be installed easily using the Mycroft Marketplace.
 Despite this you can also use the Mycroft skill manager which allows the manual
-download an installation of skills via the command line.
+download an installation of skills via the command line. Skills can also pe placed directly into /opt/mycroft/skills.
+
+Use your own skills on a Pi:
+
+. enable SSH on the Pi (sudo raspi-config -> Interfacing Options -> SSH)
+. copy your skill to the Pi: scp -r path_to_skill/skill_name/ pi@ip_address:/opt/mycroft/skills/skill_name.mycroftai/
+. restart the Pi
 
 === Other operating systems
 For now there are no Mycroft versions for Windows or MacOS. There is a version

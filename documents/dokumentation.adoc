@@ -75,7 +75,14 @@ Skills können nach der Verknüpfung mit einem Mycroft Account einfach über
 den Mycroft Marketplace installiert werden. +
 Neben dieser Art der Installation gibt es auch noch den Mycroft Skills Manager,
 welcher das Herunterladen und Installieren von Skills über die Kommandozeile
-ermöglicht.
+ermöglicht. Skills können außerdem direkt in den zugehörigen Ordner
+(/opt/mycroft/skills/) gelegt werden.
+
+Eigene Skills auf Pi:
+
+. SSH aktivieren (sudo raspi-config -> Interfacing Options -> SSH)
+. Skill auf Pi kopieren mit: scp -r path_to_skill/skill_name/ pi@ip_address:/opt/mycroft/skills/skill_name.mycroftai/
+. Pi neustarten
 
 === Weitere Systeme
 Für Windows und MacOS gibt es momentan noch keine Mycroft Versionen. Für
