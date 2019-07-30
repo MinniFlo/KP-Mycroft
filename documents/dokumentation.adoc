@@ -5,7 +5,7 @@ Rahmen des Komplexpraktikums Mensch-Computer-Interaktion.
 Mycroft ist ein Open Source Sprachassistent und ist auf Linux 
 sowie Android und insbesondere dem Raspberry Pi nutzbar. Diese Dokumentation betrachtet 
 nur die Nutzung auf Linux und dem Raspberry Pi. +
-Die offizielle Dokumentation für Mycroft findet sich unter https://mycroft.ai/documentation/#mycroft-skills-kit
+Die offizielle Dokumentation für Mycroft findet sich unter https://mycroft.ai/documentation/
 
 == Setup
 
@@ -41,13 +41,25 @@ der Sprachbefehle schlechter oder manche Geräte wie Mikrofon oder Lautsprecher
 werden nicht mehr erkannt oder funktionieren nicht richtig.
 
 Empfohlene Reihenfolge für das Setup:
+
 . Image auf SD-Karte flashen und Pi starten
 . Setup durchführen und mit Internet verbinden
-. Picroft aktualisieren (sudo apt-get update und sudo apt-get upgrade)
+. Picroft aktualisieren ("sudo apt-get update" und "sudo apt-get upgrade")
 . Mikrofon mit alsamixer einrichten oder pulseaudio installieren
 (sudo apt-get install pulseaudio)
 . Pi neu starten
 . Picroft mit Mycroft-Home verbinden
+
+=== Android
+
+Um Mycroft unter Android nutzen zu können wird ein bereits eingestelltes Mycroft-
+Gerät, zum Beispiel ein Raspberry Pi benötigt.
+
+. Android Studio installieren
+. Git-Repo klonen (https://github.com/MycroftAI/Mycroft-Android)
+. App auf einem Android Gerät mit Android Studio installieren und starten
+. in General die IP-Adresse des Mycroft-Gerätes (zum Beispiel ein Raspberry Pi) einstellen ("Hey Mycroft, what is your IP address")
+. Befehle über Sprache oder Text eingeben
 
 === Pairing
 Nach der Installation von Mycroft sollte dieses mit einem Mycroft-Home Account
@@ -63,19 +75,26 @@ Skills können nach der Verknüpfung mit einem Mycroft Account einfach über
 den Mycroft Marketplace installiert werden. +
 Neben dieser Art der Installation gibt es auch noch den Mycroft Skills Manager,
 welcher das Herunterladen und Installieren von Skills über die Kommandozeile
-ermöglicht.
+ermöglicht. Skills können außerdem direkt in den zugehörigen Ordner
+(/opt/mycroft/skills/) gelegt werden.
+
+Eigene Skills auf Pi:
+
+. SSH aktivieren (sudo raspi-config -> Interfacing Options -> SSH)
+. Skill auf Pi kopieren mit: scp -r path_to_skill/skill_name/ pi@ip_address:/opt/mycroft/skills/skill_name.mycroftai/
+. Pi neustarten
 
 === Weitere Systeme
 Für Windows und MacOS gibt es momentan noch keine Mycroft Versionen. Für
 Android gibt es zwar eine Companion-App, diese funktioniert aber erst ab
-Android SDK24 und war deshalb für den angedachten Einsatz unnutzbar. Die
+Android SDK24. Die
 Installation würde hier über Android Studio erfolgen, eine fertige, direkt
 installierbare, APK gibt es nicht.
 
 == Entwicklung von Skills
 Skills für Mycroft basieren auf Python, weshalb hier ein gewisses Grundverständnis
 unabdingbar ist. +
-Für das Verständnis von Skills in Mycroft sind 3 Begriffe besonders wichtig: +
+Für das Verständnis von Skills in Mycroft sind drei Begriffe besonders wichtig: +
 
 * dialog: Ein Dialog ist eine Phrase, die von Mycroft ausgesprochen wird, beispielsweise
 als Antwort auf eine Frage.
