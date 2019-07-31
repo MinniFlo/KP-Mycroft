@@ -73,6 +73,19 @@ class HealthCareSkill(MycroftSkill):
         else:
             return self.speak_dialog("debug")
 
+    @intent_file_handler("delete.data.intent")
+    def average_heartrate_intent(self, message):
+        data = message.data
+        if self._exists_data():
+            awnser = self.get_response("ask.delete")
+            if not awnser:
+                return
+            if awnser == "yes":
+                self._remove_data()
+                return self.speak_dialog("data.was.deleted")
+        else:
+            return self.speak_dialog("no.data")
+
     def _add_patient(self, name, lastname, heartrate):
         if not os.path.exists(self.path):
             with open(self.path, 'w') as fp:
@@ -170,6 +183,14 @@ class HealthCareSkill(MycroftSkill):
         self.first_name = names[0]
         self.last_name = names[1]
         return True
+
+    def _exists_data(self):
+        if not os.path.exists(self.path):
+            return False
+        return True
+
+    def _remove_data(self):
+        os.remove(self.path)
 
 def create_skill():
     return HealthCareSkill()
