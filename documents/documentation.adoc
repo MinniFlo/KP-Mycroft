@@ -122,3 +122,38 @@ A more detailed explanation on the necessary Python packages and how to develop
 skills can be found on https://mycroft.ai/documentation/skills/introduction-developing-skills/.
 Existing skills in the skills repository can also be used as an orientation on how
 to develop skills.
+
+== Example skill
+The health care skill is a example skill to show case some of the fetures that
+mycroft provide. It safes "patients" via theire names and theire heartrates in a
+data structure.
+
+=== Usage
+say things like ... +
+
+*to create patient:* +
+
+* "create _name_ _lastname_"
+ 
+* "Add patient _name_ _lastname_" 
+
+*to delete patient:* +
+
+* "remove _name_ _lastname_"
+
+* "delete patient _name_ _lastname_"
+
+*to add heartrate:* +
+
+* "add heartrate _heartrate_ to _name_ _lastname_"
+
+* "create a heartrate of _heartrate_ for patient _name_ _lastname_"
+
+*to get average heartrate:* +
+
+* "show the average heartrate of _name_ _lastname_"
+
+*to delete the data structur:* +
+
+* "delete data"
+
