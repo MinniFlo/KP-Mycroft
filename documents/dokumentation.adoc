@@ -131,3 +131,46 @@ def handle_hello_world(self):
 Eine ausführlichere Erklärung über die notwendigen Python-Packages und das Vorgehen
 bei der Entwicklung von Skills findet sich unter https://mycroft.ai/documentation/skills/introduction-developing-skills/.
 Außerdem kann man sich sehr gut an den bereits existierenden Skills orientieren.
+
+== Beispiel Skill
+Der "health care" skill ist ein Beispiel Skill um einige Funktionen von Mycroft 
+zu Vorzustellen. Mit diesem ist es möglich Patienten über ihren Namen in eine 
+Datenstruktur zu speichern. Außerdem können über den Skill jedem Patienten eine 
+Reihe von Herzraten zugeordnet und ausgelesen werden.
+
+=== Nutzung
+nutze Ausdrücke wie diese ... +
+
+*Patienten hinzufügen:* +
+
+* "create _name_ _lastname_"
+
+* "Add patient _name_ _lastname_" 
+
+*Patienten löschen:* +
+
+* "remove _name_ _lastname_"
+
+* "delete patient _name_ _lastname_"
+
+*Herzraten hinzufügen:* +
+
+* "add heartrate _heartrate_ to _name_ _lastname_"
+
+* "create a heartrate of _heartrate_ for patient _name_ _lastname_"
+
+*durchschnittliche Herzrate von einem Patienten:* +
+
+* "show the average heartrate of _name_ _lastname_"
+
+*die Datenstrucktur löschen:* +
+
+* "delete data"
+
+Um alle Befehle nutzen zu können muss natürlich erst ein Patient hinzugefügt 
+werden. Ein valider Name muss immer aus einem Vor- und Nachname bestehen, dies
+teilt einem der Skill aber auch mit. Falls die Datenstruktur gelöscht werden 
+soll, fragt der Skill nach einer Bestätigung. Mit unter muss man ein paar 
+Sekunden warten, bis man die Antwort gibt, in der CLI sieht man wann Mycroft 
+wieder zuhört. Als Bestätigung wird nur "yes" akzeptiert, alles andere bricht 
+den Prozess ab.

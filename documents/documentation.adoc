@@ -125,8 +125,8 @@ to develop skills.
 
 == Example skill
 The health care skill is a example skill to show case some of the fetures that
-mycroft provide. It safes "patients" via theire names and theire heartrates in a
-data structure.
+mycroft provide. It saves "patients" via theire names in a data structur. 
+Furthermore can you add heartrates to a patient. 
 
 === Usage
 say things like ... +
@@ -134,7 +134,7 @@ say things like ... +
 *to create patient:* +
 
 * "create _name_ _lastname_"
- 
+
 * "Add patient _name_ _lastname_" 
 
 *to delete patient:* +
@@ -157,3 +157,9 @@ say things like ... +
 
 * "delete data"
 
+To use all the commands, you have to add a patient first. A proper name exists 
+allways of first and last name. The skill will tell you if the naming was not
+successfull. If you use the command to delete the data strukture, the skill will 
+will ask for your confirmation. You should wait some seconds before you awnser. 
+The CLI will allso show when Mycroft is ready. The only word you can confirm 
+your choice with is "yes". Every other word will abort the process.
