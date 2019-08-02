@@ -9,7 +9,7 @@ class HealthCareSkill(MycroftSkill):
 
     def __init__(self):
         super(HealthCareSkill, self).__init__(name="HealthCareSkill")
-        self.path = "mycroft-core/skills/skill_health_care/data.txt"
+        self.path = "/opt/mycroft/skills/skill_health_care.mycroftai/data.txt"
         self.first_name = ""
         self.last_name = ""
 
