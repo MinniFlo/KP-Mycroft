@@ -134,7 +134,7 @@ Außerdem kann man sich sehr gut an den bereits existierenden Skills orientieren
 
 == Beispiel Skill
 Der "health care" skill ist ein Beispiel Skill um einige Funktionen von Mycroft 
-zu Vorzustellen. Mit diesem ist es möglich Patienten über ihren Namen in eine 
+vorzustellen. Mit diesem ist es möglich Patienten über ihren Namen in eine 
 Datenstruktur zu speichern. Außerdem können über den Skill jedem Patienten eine 
 Reihe von Herzraten zugeordnet und ausgelesen werden.
 
