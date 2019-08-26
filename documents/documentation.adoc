@@ -124,9 +124,9 @@ Existing skills in the skills repository can also be used as an orientation on h
 to develop skills.
 
 == Example skill
-The health care skill is a example skill to show case some of the fetures that
-mycroft provide. It saves "patients" via theire names in a data structur. 
-Furthermore can you add heartrates to a patient. 
+The health care skill is an example skill to show case some of the features that
+mycroft provides. It saves "patients" using their names in a data structure. 
+Furthermore one can add heartrates to a patient and calculate the average heartrate. 
 
 === Usage
 say things like ... +
@@ -157,9 +157,9 @@ say things like ... +
 
 * "delete data"
 
-To use all the commands, you have to add a patient first. A proper name exists 
-allways of first and last name. The skill will tell you if the naming was not
-successfull. If you use the command to delete the data strukture, the skill will 
-will ask for your confirmation. You should wait some seconds before you awnser. 
+To use all the commands, you have to add a patient first. A proper name consists 
+allways of a first and a last name. The skill will tell you if the naming was not
+successful. If you use the command to delete the data structure, the skill will 
+will ask for your confirmation. You should wait some seconds before you answer. 
 The CLI will allso show when Mycroft is ready. The only word you can confirm 
 your choice with is "yes". Every other word will abort the process.
