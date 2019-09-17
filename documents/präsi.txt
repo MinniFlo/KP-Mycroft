@@ -5,3 +5,10 @@ projekt doku
 - ergebnisse
 -> 20 min
 - funktions präsentation
+
+Vorstellung des Skills:
+- Mycroft eine Frage stellen, um grundsätzliche Funktionalitäten zu testen
+- Patient zur Datenstruktur hinzufügen
+- Mehrere Herzraten hinzufügen
+- Durchschnitt der Herzraten ausgeben lassen
+- Nutzer wieder entfernen
