@@ -103,7 +103,7 @@ contain regular expressions. Furthermore there are also vocab-files which end
 with .voc and contain vocabs which can be used in skills, for example synonyms.
 * regex-directory: This directory is optional and contains regex-files with
 regular expressions that can occur in intents. Regex-files end with .rx.
-* __init__.py: This python file contains the handling of all intents, processes them
+* init.py: This python file contains the handling of all intents, processes them
 and returns the results to the user.
 
 Inside the Python file, intents are mapped on functions using decorators. In

@@ -115,7 +115,7 @@ Außerdem finden sich hier auch .voc Dateien. Diese definieren bestimmte Vokabel
 Intent vorkommen können, also beispielsweise Synonyme die vom Nutzer äquivalent verwendet werden.
 * regex-Ordner: Dieser Ordner ist optional und enthält reguläre Ausdrücke, welche in Intents 
 vorkommen können. Regex-Dateien enden mit .rx
-* __init__.py: In dieser Python-Datei werden die Aufrufe der Intents behandelt, verarbeitet und 
+* init.py: In dieser Python-Datei werden die Aufrufe der Intents behandelt, verarbeitet und 
 die Ergebnisse an den Nutzer zurückgegeben.
 
 Innerhalb der Python-Datei werden die Intents mit Dekoratoren auf Funktionen abgebildet.
