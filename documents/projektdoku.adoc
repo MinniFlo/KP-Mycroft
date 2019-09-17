@@ -3,7 +3,7 @@
 == Aufgabenstellung
 
 Die Pflegebranche in Deutschland hat aktuell mit einigen Problemen zu kämpfen, dazu gehören beispelsweise ein Mangel an Fachkräften und etwaige Imageprobleme. Die zunehmende Digitalisierung in allen Bereichen der Gesellschaft sorgt allerdings für immer neue Möglichkeiten, um den Menschen mit Computern interagieren zu lassen. Ein, insbesondere für die Pflegebranche, interessanter Ansatz ist die Kommunikation über Sprachassistenten. Hier wird in den meisten Fällen die natürliche Sprache verwendet, um Befehle auszuführen und Informationen zu erhalten. Um das Pflegepersonal zu entlasten und den Patienten ein selbstbestimmteres Leben zu ermöglichen, ist der Einsatz sogenannter Assistenzroboter denkbar. Im Idealfall beschränken sich deren Fähigkeiten nicht nur auf die (natürlichsprachige) Kommunikation mit den Patienten, sondern können auch körperliche Aktivitäten übernehmen. Um Assistenzroboter alltagstauglicher zu machen müssen Konzepte entworfen und in Form von Sprachassistenten umgesetzt werden, die sich mit der Mensch-Computer-Interaktion beschäftigen. +
-Es gibt bereits einige fortschrittliche Sprachassistenten, die mit einer guten Sprach- und Intentionserkennung punkten können. Dazu gehört beispielsweise Alexa von Amazon, der Google Assistant oder Siri von Apple. All diese Programme haben allerdings gemeinsam, dass die korrekte Umsetzung der deutschen Datenschutzrichtlinien zweifelhaft ist. Gerade bei der Verarbeitung von Patientendaten ist der richtige Umgang mit sensiblen noch wichtiger, weshalb alternative Assistenten gefunden oder entwickelt werden müssen, die sich an alle Richtlinien halten. Im Optimalfall ist eine solche Software auch Open-Source. Ein solches Programm ist Mycroft. Dabei handelt es sich um einen Open-Source Sprachassistenten. +
+Es gibt bereits einige fortschrittliche Sprachassistenten, die mit einer guten Sprach- und Intentionserkennung punkten können. Dazu gehört beispielsweise Alexa von Amazon, der Google Assistant oder Siri von Apple. All diese Programme haben allerdings gemeinsam, dass die korrekte Umsetzung der deutschen Datenschutzrichtlinien zweifelhaft ist. Gerade bei der Verarbeitung von Patientendaten ist der richtige Umgang mit sensiblen Daten noch wichtiger, weshalb alternative Assistenten gefunden oder entwickelt werden müssen, die sich an alle Richtlinien halten. Im Optimalfall ist eine solche Software auch Open-Source. Ein solches Programm ist Mycroft. Dabei handelt es sich um einen Open-Source Sprachassistenten. +
 Ziel dieser Arbeit ist es, zu untersuchen, inwieweit Mycroft dazu geeignet ist, komplexe Skills umzusetzen und in der Pflegebranche eingesetzt zu werden. Zu den Schwerpunkten gehören:
 
 . Einarbeitung in das Themengebiet
@@ -45,14 +45,54 @@ Die Zeit für das Komplexpraktikum streckte sich über ca. 13 Wochen und wurde w
 
 |===
 
+== Einsatzszenarien im Health-Care-Umfeld
+
+Betrachtet man mögliche Einsatzszenarien für die Nutzung von Sprachassistenten im Health-Care-Bereich sind zwei Benutzergruppen besonders wichtig: Patienten und Pfleger. +
+Es folgt ein Überblick über Einsatzmöglichkeiten von Sprachassistenten. +
+
+Pflegekraft:
+
+. Aufzeichnung von Patientendaten
+. Abruf von Daten
+. Bessere Organisation und Aktualität der Daten
+
+Patient:
+
+. Automatische Erinnerungen
+. Abruf von Informationen
+. Aufzeichnung von Symptomen und Gesundheitsdaten
+, Handlungsempfehlungen für leichte Krankheiten abfragen
+. Informationen über Krankheiten, Medikamente und Ärzte erhalten
+
 == Herangehensweisen
 
 Im Rahmen des Komplexpraktikums wurde ein Skill für den Einsatz im Health-Care-Bereich entworfen und für Mycroft umgesetzt. Eine ausführliche Erklärung wie Skills für Mycroft geschrieben werden, findet sich in den beiliegenden Skill-Dokumentationen und der offiziellen Mycroft-Dokumentation. +
 Skills für Mycroft werden in der Programmiersprache Python geschrieben, welche vergleichsweise einsteigerfreundlich ist. Das ermöglicht es, schnelle Erfolge zu erzielen, aber auch komplexere Skills umzusetzen. Die Erkennung von Befehlen erfolgt bei Mycroft über ein Wake-word und das Identifizieren des getätigten Befehls durch eine Überprüfung, welche Befehle zur Verfügung stehen. Die Nutzereingaben werden mit installierten Skills verglichen und das erkannte Python-Programm wird dann aufgerufen. +
-Der entworfene Skill soll vor allem die Funktionalitäten von Mycroft näher bringen und ist leicht wiederverwendbar und lesbar. Er ermöglicht es, Patienten mit ihrem Namen in eine json-Datenstruktur zu speichern, ihnen Herzraten zuzuordnen und diese auslesen können. Der Skill soll dadurch eine Hilfe für Pfleger sein, Patientendaten zu erfassen und in geeigneter Form abzuspeichern. Das Konzept und die Software lässt sich leicht auf andere Themenbereiche erweitern, um komplexere Anwendungen zu ermöglichen. +
+Der entworfene Skill soll vor allem die Funktionalitäten von Mycroft näher bringen und ist leicht wiederverwendbar und lesbar. Er ermöglicht es, Patienten mit ihrem Namen in eine json-Datenstruktur zu speichern, ihnen Herzraten zuzuordnen und diese auslesen zu können. Der Skill soll dadurch eine Hilfe für Pfleger sein, Patientendaten zu erfassen und in geeigneter Form abzuspeichern. Das Konzept und die Software lässt sich leicht auf andere Themenbereiche erweitern, um komplexere Anwendungen zu ermöglichen. +
 
 == Probleme
 
 Schwierig war besonders zu Anfang der Einstieg in die Entwicklung von Skills für Mycroft. Die offizielle Dokumentation ist zwar recht ausführlich, dafür aber vergleichsweise unübersichtlich und enthält sowohl aktuelle als auch veraltete Informationen. Gerade bei der Entwicklung von Skills war es deshalb sinnvoll, sich nach bereits existierenden Skills zu richten und durch deren Analyse den korrekten Umgang zu erlernen. Dadurch, dass alle Skills Open-Source sind, ist ihr Quelltext und somit eine gute Orientierung frei verfügbar. Nach dem man die Grundkonzepte verstanden hat (welche in der offiziellen Dokumentation gut erklärt sind) und sich auch die korrekte Entwicklung mit Python erarbeitet hat, ist die Umsetzung von Skills relativ einfach. +
 Ein weiteres Problem war der unterschiedliche Umgang mit Skills auf Picroft (dem Mycroft-Betriebssystem für den Raspberry Pi) und Mycroft unter Linux. Bei beiden Betriebssystemen wird ein unterschiedlicher Pfad für das Speichern von Skills verwendet, was die Umsetzung von Skills, welche Daten abspeichern sollen, erschwert. Gelöst werden konnte dieses Hindernis durch die Entwicklung einer getrennten Version für den Raspberry Pi. +
 Letztlich hat aber auch die Verwendung des Pis für die Nutzung von Mycroft Probleme gemacht. Es traten Probleme mit der Erkennung des Mikrofons, sowie von Kopfhörern auf. Zurückzuführen war dies auf ein zu schwaches Netzteil. Ein Netzteil mit mehr Ampere konnte das Problem abschwächen. Dennoch ist die Performance auf dem Pi im Vergleich zu einem normalen PC nicht besonders gut. Es kommt häufiger zu Hängern oder längeren Wartezeiten nach der Erkennung des Wake-Words.
+
+== Eignung von Mycroft für den Health-Care-Bereich
+
+Vorteile:
+
+. Besserer Datenschutz als Konkurrenz, die Verbindung zu einem Server ist trotzdem nötig
+. Kontaktfreie Bedienung
+. Durch die Verwendung von Python können auch sehr komplexe Backends für Skills problemlos geschrieben werden
+. Open-Source Software
+
+Nachteile:
+
+. Unübersichtliche Dokumentation mit teilweise veralteten Einträgen
+. Start- und Absturzprobleme, insbesondere auf dem Raspberry Pi
+. Speech-To-Text nicht präzise genug
+. Sprachsynthese von mäßiger Qualität, was zu Kommunikationsproblemen (insbesondere mit älteren Menschen) führen kann
+. Lediglich Englisch wird offiziell unterstützt
+. Keine Authentifizierung bei der Spracheingabe
+. Cloud-Anbindung
+
+Diese Auflistung zeigt, dass Mycroft vor allem in einem punkten kann: Es ist eine Open-Source-Software. Ansonsten hat die Software noch viele Probleme, welche sie für einen Einsatz in der Praxis untauglich machen. Durch zu wenig Sprachunterstützung, eine schlechte Spracherkennung und Sprachsynthese wird das weiter verstärkt. Auch im Thema Datenschutz gibt es noch einiges zu tun. Zwar verspricht Mycroft mit dem Open-Source Ansatz eine transparente Handhabung der Daten, der Sitz der Firma ist aber dennoch in den USA und es sollte gut überlegt werden, ob sensible Anwendungen mit Mycroft umgesetzt werden können.

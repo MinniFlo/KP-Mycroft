@@ -2,7 +2,7 @@
 
 This documentation describes the use of Mycroft.ai.
 Mycroft is an Open-Source voice assistant which can be used on Linux,
-Android an especially the Raspberry Pi. +
+Android and especially the Raspberry Pi. +
 The official documentation can be found on https://mycroft.ai/documentation/
 
 == Setup
@@ -17,7 +17,7 @@ from GitHub and install it manually (see https://github.com/MycroftAI/mycroft-co
 === Raspberry Pi
 To use a Pi as a voice assistant, you need a Raspberry Pi 3 or better, an USB or
 3.5mm speaker or monitor with speakers and an USB-microphone. For the setup you
-might also need an keyboard and a monitor. Picroft, the Mycroft version for
+might also need a keyboard and a monitor. Picroft, the Mycroft version for
 Raspberry Pi, can be downloaded on https://github.com/MycroftAI/enclosure-picroft/
 and can simply be flashed on a SD-card using a flashing-software like Etcher. +
 When starting the first time, you need to follow the setup, configure the 
@@ -30,7 +30,7 @@ and you can continue with pairing it to your Mycroft Home account.
 
 When using a Pi you need to check that your power adapter has enough ampere.
 Mycroft recommends using a power adapter with 2.5A, but 2A was also tested
-succesfully. If you don't have enough amps the recognition of voice commands
+succesfully. If you don't have enough amps, the recognition of voice commands
 might get worse and some devices like the speakers or microphone might not
 work at all.
 
@@ -63,10 +63,10 @@ The pairing is done using a six digit long authentication key which will be
 output by Mycroft after its first start. This key has to be added online to your
 account. After that the complete use of Mycroft is possible.
 
-=== Installation von Skills
+=== Installation of skills
 After pairing your device, skills can be installed easily using the Mycroft Marketplace.
 Despite this you can also use the Mycroft skill manager which allows the manual
-download an installation of skills via the command line. Skills can also pe placed directly into /opt/mycroft/skills.
+download and installation of skills via the command line. Skills can also be placed directly into /opt/mycroft/skills.
 
 Use your own skills on a Pi:
 
@@ -83,28 +83,27 @@ via Android Studio as there is no ready to use APK.
 Skills for Mycroft are based on Python, which is why you need a basic understanding
 for it in order to develop skills. +
 There are three terms which are really important for the understanding of Mycroft
-skill: +
+skills: +
 
 * dialog: A dialog is a phrase which is spoken by Mycroft, for example as an
 answer for a question.
 * utterance: Utterances are sentences which are spoken by users after they used
 the wake word ("Hey Mycroft").
 * intent: An intent is an identifiable call of a skill. Utterances are compared
-to existing intents and the matched skill is acitvated.
+to existing intents and the matched skill is activated.
 
 For skills there is a repository on GitHub (https://github.com/MycroftAI/mycroft-skills) where you can find many community skills
 and skills by Mycroft as well as a template for new skills (https://github.com/MycroftAI/mycroft-skills/tree/19.02/00__skill_template). +
-The structure for the skill repositories is relatively strict:
+The structure for skill repositories is relatively strict:
 
-* dialog-directory: All dialog-files for various languages will go here. Dialog-
-Files end with .dialog
+* dialog-directory: All dialog-files for various languages will go here. Dialog-Files end with .dialog
 * vocab-directory: The vocab-directory contains all intent-files in different 
 languages that the skill shall react to. Intent-files end with .intent and can
 contain regular expressions. Furthermore there are also vocab-files which end 
-with .vod and contain vocabs which can be used in skills for example synonyms.
+with .voc and contain vocabs which can be used in skills, for example synonyms.
 * regex-directory: This directory is optional and contains regex-files with
 regular expressions that can occur in intents. Regex-files end with .rx.
-* init.py: This python file contains the handling of all intents, processes them
+* __init__.py: This python file contains the handling of all intents, processes them
 and returns the results to the user.
 
 Inside the Python file, intents are mapped on functions using decorators. In
@@ -157,9 +156,9 @@ say things like ... +
 
 * "delete data"
 
-To use all the commands, you have to add a patient first. A proper name consists 
-allways of a first and a last name. The skill will tell you if the naming was not
+To use all the commands, you have to add a patient first. A proper name always consists
+ of a first and a last name. The skill will tell you if the naming was not
 successful. If you use the command to delete the data structure, the skill will 
-will ask for your confirmation. You should wait some seconds before you answer. 
-The CLI will allso show when Mycroft is ready. The only word you can confirm 
+ask for your confirmation. You should wait some seconds before you answer. 
+The CLI will also show when Mycroft is ready. The only word you can confirm 
 your choice with is "yes". Every other word will abort the process.
