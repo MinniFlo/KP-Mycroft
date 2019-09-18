@@ -144,13 +144,13 @@ say things like ... +
 
 *to add heartrate:* +
 
-* "add heartrate _heartrate_ to _name_ _lastname_"
+* "add heart rate _heartrate_ to _name_ _lastname_"
 
-* "create a heartrate of _heartrate_ for patient _name_ _lastname_"
+* "create a heart rate of _heartrate_ for patient _name_ _lastname_"
 
 *to get average heartrate:* +
 
-* "show the average heartrate of _name_ _lastname_"
+* "show the average heart rate of _name_ _lastname_"
 
 *to delete the data structur:* +
 

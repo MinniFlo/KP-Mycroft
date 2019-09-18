@@ -154,13 +154,13 @@ nutze Ausdrücke wie diese ... +
 
 *Herzraten hinzufügen:* +
 
-* "add heartrate _heartrate_ to _name_ _lastname_"
+* "add heart rate _heartrate_ to _name_ _lastname_"
 
-* "create a heartrate of _heartrate_ for patient _name_ _lastname_"
+* "create a heart rate of _heartrate_ for patient _name_ _lastname_"
 
 *durchschnittliche Herzrate von einem Patienten:* +
 
-* "show the average heartrate of _name_ _lastname_"
+* "show the average heart rate of _name_ _lastname_"
 
 *die Datenstruktur löschen:* +
 

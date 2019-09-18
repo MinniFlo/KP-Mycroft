@@ -1,6 +1,6 @@
-A Heartrate of {{heartrate}} was added to {{name}}.
-A Heartrate of {{heartrate}} was added to patient {{name}}.
-The Heartrate of {{heartrate}} was added to {{name}}.
-The Heartrate of {{heartrate}} was added to to patient {{name}}.
-A new Heartrate of {{heartrate}} was added to {{name}}.
-A new Heartrate of {{heartrate}} was added to patient {{name}}.
+A heart rate of {{heartrate}} was added to {{name}}.
+A heart rate of {{heartrate}} was added to patient {{name}}.
+The heart rate of {{heartrate}} was added to {{name}}.
+The heart rate of {{heartrate}} was added to to patient {{name}}.
+A new heart rate of {{heartrate}} was added to {{name}}.
+A new heart rate of {{heartrate}} was added to patient {{name}}.

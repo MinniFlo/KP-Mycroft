@@ -74,7 +74,7 @@ class HealthCareSkill(MycroftSkill):
             return self.speak_dialog("debug")
 
     @intent_file_handler("delete.data.intent")
-    def average_heartrate_intent(self, message):
+    def delete_data_intent(self, message):
         data = message.data
         if self._exists_data():
             awnser = self.get_response("ask.delete")
